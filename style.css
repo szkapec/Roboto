@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    /* równe krawedzie miedzy lewa prawa i miedzy nimi */
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.typing {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    color: rgb(67, 158, 204);
+    font-weight: 700;
+    width: 50%;
+}
+.typing p {
+    margin: 0;
+    line-height: 150%;
+}
+
+.roboto {
+    width: 30%;
+    padding: 3%;
+    box-sizing: border-box;
+}
+.typing p::before {
+    content: "> ";
+}
+/* ostatni od konca */
+.typing p:nth-last-of-type(1)::after{
+    content: "_";
+    animation: cursor .3s infinite alternate;
+}
+
+@keyframes cursor {
+    0%,30% {
+        opacity: 0;
+    }
+    70%, 100% {
+        opacity: 1;
+    }
+}
